@@ -1,31 +1,38 @@
 ---
-title: "Aaron M. Kessler"
+title: "Ella Louise Stern"
 about:
   template: jolla
-  image: testimage.jpg
+  image: DSCN1868.JPG
   links:
     - icon: twitter
       text: twitter
-      href: https://twitter.com/akesslerdc
+      href: https://twitter.com/ella125_
     - icon: github
       text: Github
-      href: https://github.com/amkessler
+      href: https://github.com/ellasmpa
 ---
 
-Hi, I'm Aaron and I'm a reporter at the AP in Washington. I like data, the ocean and F1 racing. I've got two little ones and enjoy watching them grow up.
+Hi, I'm Ella!
+
+I'm a graduating senior at the George Washington University in Washington, DC. I like journalism, local politics and following cultural trends. 
+
+After graduation, I'm looking to pursue a career in strategic communications or public relations.
+
 
 ## Education
 
-University of Missouri tktktktk
-
-Columbia University
-
-Washington University in St. Louis
+School of Media and Public Affairs, George Washington University
 
 ## Skills
 
 Reporting and Writing
 
+Media Monitoring
+
+Strategic Communications
+
+Media Relations
+
 Data Analysis
 
-FOIA laws
+Public Relations

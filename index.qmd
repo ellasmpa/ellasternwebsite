@@ -1,5 +1,5 @@
 ---
-title: "Ella Louise Stern"
+title: "Ella  Stern"
 about:
   template: jolla
   image: DSCN1868.JPG

@@ -2,26 +2,28 @@
 title: "Portfolio"
 ---
 
-Hi there this is my portfolio page! Yay...
-  
-Here are examples of my work:
+Hi there this is my portfolio page!
 
-GW HATCHET: 
+# Blog post from Spitfire Strategies Internship, Summer 2022
 
-GW must provide students with the means to succeed this fall
-  
-  This article was an op-ed I wrote in Fall 2020 urging GW administration to support students
-  throughout the period of online learning which was implemented from March 2020-August 2021.
+![](spitfire.jpg){fig-align="center" width="609"}
 
-SA’s Black Senators Caucus focuses on black representation in inaugural year
- 
-  This article was a feature story on two student senators in the GW Student Association.
+## [**How public interest communicators can engage youth advocates to advance urgent causes**]{.underline}
 
-INTERNSHIP BLOG:
+This is a [blog post](https://www.spitfirestrategies.com/how-public-interest-communicators-can-engage-youth-advocates-advance-urgent-causes) I wrote during my internship at Spitfire Strategies in the summer of 2022. The blog focuses on how professionals in the field of public interest communications can best support youth advocates.
 
-How public interest communicators can engage youth advocates to advance urgent causes
+# Op-Ed from the GW Hatchet
 
-  I wrote this blog during my internship at Spitfire Strategies in Summer 2022. The blog
-  focuses on how professionals in the field of public interest communications can support 
-  youth advocates that work across a range of important causes.
+![](hatchet.jpg){fig-align="center"}
 
+## [**GW must provide students with the means to succeed this fall**]{.underline}
+
+This is an op-ed that I wrote during in fall 2020 urging GW administrators to support students throughout the period of online learning, from Fall 2020-Spring 2021.
+
+# News Package 
+
+![](CROWn.jpeg){fig-align="center" width="237"}
+
+## [**The CROWN Act and It's Impact on Black Color at GW**]{.underline}
+
+This is a [news package](https://youtu.be/2NIqTcIYdXQ) that I made for Broadcast News Reporting in Spring 2021. The package featured coverage of the recently passed CROWN Act and input from the GW community on its significance.

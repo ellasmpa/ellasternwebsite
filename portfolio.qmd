@@ -2,7 +2,7 @@
 title: "Portfolio"
 ---
 
-Hi there this is my portfolio page!
+Explore some of my recent work from working on my school newspaper, to a blogpost I wrote during my internship at Spitfire Strategies.
 
 # Blog post from Spitfire Strategies Internship, Summer 2022
 
@@ -20,7 +20,7 @@ This is a [blog post](https://www.spitfirestrategies.com/how-public-interest-com
 
 This is an op-ed that I wrote during in fall 2020 urging GW administrators to support students throughout the period of online learning, from Fall 2020-Spring 2021.
 
-# News Package 
+# News Package
 
 ![](CROWn.jpeg){fig-align="center" width="237"}
 

@@ -1,6 +1,9 @@
 ---
 title: "More Stuff About Me"
 ---
+```{r}
+
+```
 
 About this site  
   

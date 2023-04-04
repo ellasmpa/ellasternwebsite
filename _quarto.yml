@@ -16,6 +16,8 @@ website:
       - about.qmd
       - portfolio.qmd
       - walkthrough.qmd
+      - textofpaper.qmd
+      
       
 
 

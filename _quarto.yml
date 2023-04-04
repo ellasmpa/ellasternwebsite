@@ -17,10 +17,7 @@ website:
       - portfolio.qmd
       - walkthrough.qmd
       - textofpaper.qmd
-      - culturalreporting.qmd
-      
-      
-
+      - newsstory.qmd
 
 format:
   html:

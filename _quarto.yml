@@ -8,7 +8,7 @@ website:
     right: 
       - icon: github
         href: https://github.com/
-  title: "Ella's Website 1"
+  title: "Ella's Website"
   navbar:
     left:
       - href: index.qmd

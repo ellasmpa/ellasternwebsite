@@ -36,10 +36,9 @@ Let's quickly review how we use it.
 
 ```{r}
 
-uncomment to run, then recomment it out so you don't run it every time
+# uncomment to run, then recomment it out so you don't run it every time
 
-census_api_key("fc8075b08621ccff5ba95b7915f23aa7a16e00a8", overwrite=TRUE)
-census_api_key("fc8075b08621ccff5ba95b7915f23aa7a16e00a8", install = TRUE)
+census_api_key("2a6f8c21a30d3024e038d67d7d4eba647dc79cd4", install=TRUE, overwrite=TRUE)
 readRenviron("~/.Renviron")
 
 
@@ -55,15 +54,15 @@ myvars <- c(totalpop = "B01003_001",
 
 
 ```{r}
-
-load_data_acs
-
-#pull for VA counties
-mi_counties_withgeo <- get_acs(geography = "county",
+ 
+#pull for MI counties
+load_data_acs <- get_acs(geography = "county",
                        variables = c(myvars),
                        state = "MI",
                        output = "wide",
                        geometry = TRUE)
+
+mi_counties_withgeo
 
 mi_counties_withgeo
 ```
@@ -107,7 +106,7 @@ mapview(mi_counties_withgeo, zcol = "medincome")
 Customize colors
 ```{r}
 
-mapview(va_counties_withgeo, zcol = "medincome", 
+mapview(mi_counties_withgeo, zcol = "medincome", 
          col.regions = RColorBrewer::brewer.pal(9, "Greens"), 
          alpha.regions = 1)
 
@@ -126,7 +125,7 @@ mapviewOptions("basemaps.color.shuffle" = FALSE)
 
 ```{r}
 
-mapview(va_counties_withgeo, zcol = "medincome", 
+mapview(mi_counties_withgeo, zcol = "medincome", 
          col.regions = RColorBrewer::brewer.pal(9, "Greens"), 
          alpha.regions = 1)
 
@@ -137,11 +136,11 @@ mapview(va_counties_withgeo, zcol = "medincome",
 Two maps together
 ```{r}
 
-map_income <- mapview(va_counties_withgeo, zcol = "medincome", 
+map_income <- mapview(mi_counties_withgeo, zcol = "medincome", 
          col.regions = RColorBrewer::brewer.pal(9, "Greens"), 
          alpha.regions = 1)
 
-map_age <- mapview(va_counties_withgeo, zcol = "medage", 
+map_age <- mapview(mi_counties_withgeo, zcol = "medage", 
          col.regions = RColorBrewer::brewer.pal(9, "Greens"), 
          alpha.regions = 1)
 
@@ -168,7 +167,7 @@ To turn off legends, hover text, popups
 
 ```{r}
 
-mapview(va_counties_withgeo, zcol = "medincome", 
+mapview(mi_counties_withgeo, zcol = "medincome", 
          col.regions = RColorBrewer::brewer.pal(9, "Greens"), 
          alpha.regions = 1,
          legend = FALSE, 
@@ -181,10 +180,10 @@ mapview(va_counties_withgeo, zcol = "medincome",
 Customize labels
 ```{r}
 
-mylabel <- glue::glue("{va_counties_withgeo$NAM} {va_counties_withgeo$medincome}")
+mylabel <- glue::glue("{mi_counties_withgeo$NAM} {mi_counties_withgeo$medincome}")
 
 
-mapview(va_counties_withgeo, zcol = "medincome", 
+mapview(mi_counties_withgeo, zcol = "medincome", 
          col.regions = RColorBrewer::brewer.pal(9, "Greens"), 
          alpha.regions = 1,
          label = mylabel)
@@ -193,13 +192,13 @@ mapview(va_counties_withgeo, zcol = "medincome",
 
 Customize popups
 ```{r}
-mypopup <- glue::glue("<strong>{va_counties_withgeo$NAM}</strong><br />
-                      Total Population: {va_counties_withgeo$totalpop}<br />
-                      Median Income: {va_counties_withgeo$medincome}") %>% 
+mypopup <- glue::glue("<strong>{mi_counties_withgeo$NAM}</strong><br />
+                      Total Population: {mi_counties_withgeo$totalpop}<br />
+                      Median Income: {mi_counties_withgeo$medincome}") %>% 
   lapply(htmltools::HTML)
 
-# mylabel <- glue::glue("{all_data$State} {all_data$PctChange10_20}%") %>%
-#   lapply(htmltools::HTML)
+mylabel <- glue::glue("{all_data$State} {all_data$PctChange10_20}%") %>%
+  lapply(htmltools::HTML)
 
 ```
 
@@ -213,7 +212,7 @@ head(mypopup)
 
 ```{r}
 
-mapview(va_counties_withgeo, zcol = "medincome", 
+mapview(mi_counties_withgeo, zcol = "medincome", 
          col.regions = RColorBrewer::brewer.pal(9, "Greens"), 
          alpha.regions = 1,
          popup = mypopup)

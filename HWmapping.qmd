@@ -92,7 +92,7 @@ colnames(mi_counties_withgeo) <- sub("E$", "", colnames(mi_counties_withgeo)) # 
 mi_counties_withgeo
 ```
 
-Mapping Virginia counties with mapview
+Mapping Michigan counties with mapview
 
 ```{r}
 

@@ -27,12 +27,18 @@ options(tigris_class = "sf")
 
 ```
 
+
+
+
 # Interactive Maps with MapView Package
 
 A h/t to Sharon Machlis for turning people on to the Mapview package, and her excellent walkthroughs of it.
 
 For the data tonight we'll be using the tidycensus package to pull both census data, as well as geospatial boundaries. 
 Let's quickly review how we use it.
+
+
+
 
 ```{r}
 
@@ -51,7 +57,6 @@ myvars <- c(totalpop = "B01003_001",
             medage = "B01002_001"
 )
 ```
-
 
 ```{r}
  
@@ -90,7 +95,13 @@ colnames(mi_counties_withgeo) <- sub("E$", "", colnames(mi_counties_withgeo)) # 
 mi_counties_withgeo
 ```
 
+
+
+
 Mapping Michigan counties with mapview
+
+
+
 
 ```{r}
 
@@ -101,7 +112,13 @@ mapview(mi_counties_withgeo, zcol = "medincome")
 ```
 
 
+
+
+
 Customize colors
+
+
+
 ```{r}
 
 mapview(mi_counties_withgeo, zcol = "medincome", 
@@ -111,7 +128,13 @@ mapview(mi_counties_withgeo, zcol = "medincome",
 
 
 ```
+
+
+
 This map’s dark background appeared automatically, because mapview determined the map included a lot of light colors. You can turn off that feature.
+
+
+
 
 ```{r}
 
@@ -120,7 +143,6 @@ mapviewOptions("basemaps.color.shuffle" = FALSE)
 
 ```
 
-
 ```{r}
 
 mapview(mi_counties_withgeo, zcol = "medincome", 
@@ -131,7 +153,13 @@ mapview(mi_counties_withgeo, zcol = "medincome",
 
 ```
 
+
+
+
 Two maps together
+
+
+
 ```{r}
 
 map_income <- mapview(mi_counties_withgeo, zcol = "medincome", 
@@ -145,7 +173,6 @@ map_age <- mapview(mi_counties_withgeo, zcol = "medage",
 
 ```
 
-
 ```{r}
 
 sync(map_income, map_age)
@@ -153,14 +180,26 @@ sync(map_income, map_age)
 
 ```
 
+
+
+
 Side-by-side slider to compare the two, from the leaflet.extras2 package 
+
+
+
 ```{r}
 
 map_income | map_age
 
 
 ```
+
+
+
 To turn off legends, hover text, popups
+
+
+
 
 
 ```{r}
@@ -175,7 +214,13 @@ mapview(mi_counties_withgeo, zcol = "medincome",
 
 ```
 
+
+
+
 Customize labels
+
+
+
 ```{r}
 
 mylabel <- glue::glue("{mi_counties_withgeo$NAM} {mi_counties_withgeo$medincome}")
@@ -188,7 +233,13 @@ mapview(mi_counties_withgeo, zcol = "medincome",
 
 ```
 
+
+
+
 Customize popups
+
+
+
 ```{r}
 mypopup <- glue::glue("<strong>{mi_counties_withgeo$NAM}</strong><br />
                       Total Population: {mi_counties_withgeo$totalpop}<br />
@@ -200,13 +251,11 @@ mylabel <- glue::glue("{all_data$State} {all_data$PctChange10_20}%") %>%
 
 ```
 
-
 ```{r}
 
 head(mypopup)
 
 ```
-
 
 ```{r}
 
@@ -217,20 +266,15 @@ mapview(mi_counties_withgeo, zcol = "medincome",
 
 ```
 
-
 ```{r}
 
 
 
 ```
 
-
 ```{r}
 
 
 
 ```
-
-
-
 

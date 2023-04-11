@@ -1,0 +1,13 @@
+---
+title: "Resume"
+---
+
+Below is my most updated resume!
+
+```{r}
+
+```
+
+![](SternElla.pdf)
+
+This is my updated resume!

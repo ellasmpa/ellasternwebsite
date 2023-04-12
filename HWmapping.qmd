@@ -195,7 +195,7 @@ mypopup <- glue::glue("<strong>{mi_counties_withgeo$NAM}</strong><br />
                       Median Income: {mi_counties_withgeo$medincome}") %>% 
   lapply(htmltools::HTML)
 
-mylabel <- glue::glue("{all_data$State} {all_data$PctChange10_20}%") %>%
+mylabel <- glue::glue("{mi_counties_withgeo$State} {mi_counties_withgeo$PctChange10_20}%") %>%
   lapply(htmltools::HTML)
 
 ```

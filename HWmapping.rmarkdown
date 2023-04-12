@@ -28,16 +28,12 @@ options(tigris_class = "sf")
 ```
 
 
-
-
 # Interactive Maps with MapView Package
 
 A h/t to Sharon Machlis for turning people on to the Mapview package, and her excellent walkthroughs of it.
 
 For the data tonight we'll be using the tidycensus package to pull both census data, as well as geospatial boundaries. 
 Let's quickly review how we use it.
-
-
 
 
 ```{r}
@@ -96,11 +92,7 @@ mi_counties_withgeo
 ```
 
 
-
-
 Mapping Michigan counties with mapview
-
-
 
 
 ```{r}
@@ -113,11 +105,7 @@ mapview(mi_counties_withgeo, zcol = "medincome")
 
 
 
-
-
 Customize colors
-
-
 
 ```{r}
 
@@ -129,11 +117,7 @@ mapview(mi_counties_withgeo, zcol = "medincome",
 
 ```
 
-
-
 This map’s dark background appeared automatically, because mapview determined the map included a lot of light colors. You can turn off that feature.
-
-
 
 
 ```{r}
@@ -154,11 +138,7 @@ mapview(mi_counties_withgeo, zcol = "medincome",
 ```
 
 
-
-
 Two maps together
-
-
 
 ```{r}
 
@@ -181,11 +161,7 @@ sync(map_income, map_age)
 ```
 
 
-
-
 Side-by-side slider to compare the two, from the leaflet.extras2 package 
-
-
 
 ```{r}
 
@@ -194,11 +170,7 @@ map_income | map_age
 
 ```
 
-
-
 To turn off legends, hover text, popups
-
-
 
 
 
@@ -215,11 +187,7 @@ mapview(mi_counties_withgeo, zcol = "medincome",
 ```
 
 
-
-
 Customize labels
-
-
 
 ```{r}
 
@@ -234,11 +202,7 @@ mapview(mi_counties_withgeo, zcol = "medincome",
 ```
 
 
-
-
 Customize popups
-
-
 
 ```{r}
 mypopup <- glue::glue("<strong>{mi_counties_withgeo$NAM}</strong><br />
@@ -246,7 +210,7 @@ mypopup <- glue::glue("<strong>{mi_counties_withgeo$NAM}</strong><br />
                       Median Income: {mi_counties_withgeo$medincome}") %>% 
   lapply(htmltools::HTML)
 
-mylabel <- glue::glue("{all_data$State} {all_data$PctChange10_20}%") %>%
+mylabel <- glue::glue("{mi_counties_withgeo$State} {mi_counties_withgeo$PctChange10_20}%") %>%
   lapply(htmltools::HTML)
 
 ```

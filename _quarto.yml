@@ -19,6 +19,7 @@ website:
       - textofpaper.qmd
       - newsstory.qmd
       - resume.qmd
+      - HWmapping.qmd
 
 format:
   html:

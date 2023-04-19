@@ -13,13 +13,15 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - href: SternElla.pdf
+        text: Resume
       - about.qmd
       - portfolio.qmd
       - walkthrough.qmd
       - textofpaper.qmd
       - newsstory.qmd
-      - resume.qmd
       - HWmapping.qmd
+      - va_electionproject.qmd
 
 format:
   html:

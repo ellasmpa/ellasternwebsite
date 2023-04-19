@@ -1,0 +1,57 @@
+---
+title: "Virginia Election Project"
+author: "Ella"
+execute:
+  echo: true
+format:
+  html:
+    self-contained: true
+    code-tools: true
+---
+
+```{r setup, include=FALSE, warning=FALSE, message=FALSE}
+
+
+library(tidyverse)
+library(janitor)
+library(kableExtra)
+library(here)
+options(scipen = 999)
+options(stringsAsFactors = FALSE)
+library(tidyverse) 
+library(janitor) 
+library(readxl) 
+library(scales)
+library(lubridate)
+library(ggthemes)
+library(esquisse)
+
+
+#load saved joined data file from previous script
+joined_vacomparison <- readRDS(here("processed_data", "joined_vacomparison.rds"))
+
+
+
+```
+
+# Comparing Virgnia Gov vs. Prez
+
+This dataset compares the percentage of votes between the 2021 virginia governor's race and the 2020 presidential election. You may be asking - why are we comparing these two elections? The answer lies in the implications of gubernatorial elections to presidential elections in the United States.
+
+```{r}
+
+head(joined_vacomparison)
+
+
+```
+
+```{r}
+ggplot(joined_vacomparison, aes(x = biden_pct, y = pct_youngkin)) +
+  geom_col(color = "black", fill = "red") +
+  geom_col()
+
+
+```
+
+```{r}
+```

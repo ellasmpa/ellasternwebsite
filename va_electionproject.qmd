@@ -62,7 +62,8 @@ pctyoungkintrump <- joined_vacomparison %>%
 
 pctyoungkintrump
 
-```
-```{r}
+## column  calculating the difference between the percentage of the vote Youngkin received and what Trump received
 ```
 
+
+```{r}

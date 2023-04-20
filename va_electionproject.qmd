@@ -46,12 +46,23 @@ head(joined_vacomparison)
 ```
 
 ```{r}
-ggplot(joined_vacomparison, aes(x = biden_pct, y = pct_youngkin)) +
-  geom_col(color = "black", fill = "red") +
-  geom_col()
+joined_vacomparison %>% 
+  mutate(bidenwins = biden > trump,
+         mcauliffewins = mcauliffe > youngkin,
+         trumppct_wins = trump_pct > biden_pct,
+         younkinpct_wins = pct_youngkin > pct_mcauliffe
+  )
 
-
+## this shows the congruency between the democrats and republicans winning across the election cycles. when biden had the most votes, youngkin also had the most votes. this holds true when looking at percentage of votes won by the republicans in the 2020 Presidential election and the gubernatorial race
 ```
 
 ```{r}
+pctyoungkintrump <- joined_vacomparison %>% 
+  mutate(pct_youngkin - trump_pct)
+
+pctyoungkintrump
+
 ```
+```{r}
+```
+

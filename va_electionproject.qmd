@@ -63,6 +63,27 @@ pctyoungkintrump <- joined_vacomparison %>%
 pctyoungkintrump
 
 ## column  calculating the difference between the percentage of the vote Youngkin received and what Trump received
+
+
+joined_vacomparison <- joined_vacomparison %>% 
+  mutate(mc_overperform = pct_mcauliffe - biden_pct, mc_overperform_worsethan10 = 
+           ifelse(mc_overperform < -10, "YES", "NO"))
+
+joined_vacomparison
+
+## Include code to a new column to the dataset calculating the difference between the percentage of the vote Youngkin received and what Trump received.
+
+joined_vacomparison <- joined_vacomparison %>% 
+  mutate(yk_overperform = pct_youngkin - trump_pct)
+
+joined_vacomparison
+
+yk_overperform_worsethan10 = 
+           ifelse(yk_overperform < -10, "YES", "NO"))
+joined_vacomparison
+
+
+
 ```
 
 

@@ -26,8 +26,6 @@ library(lubridate)
 library(ggthemes)
 library(esquisse)
 
-remotes::install_github('rstudio/DT')
-
 
 #load saved joined data file from previous script
 joined_vacomparison <- readRDS(here("processed_data", "joined_vacomparison.rds"))
@@ -38,16 +36,8 @@ joined_vacomparison <- readRDS(here("processed_data", "joined_vacomparison.rds")
 
 # Comparing Virgnia Gov vs. Prez
 
-*A narrative introduction that tells the audience what data you will be showing them and why:*
-
-This data set compares the percentage of votes between the 2021 Virginia governor's race and the 2020 presidential election. You may be asking - why are we comparing these two elections? The answer lies in the implications of gubernatorial elections to presidential elections in the United States. The 2021 gubernatorial election in VA was important because it mirrored many of the issues that were salient during the 2020 election. Social issues such as the topic of 'critical race theory' remained an important discussion throughout the gubernatorial race as both candidates made appeals to different voting factions. This data compares the two races in order to give us an understanding of how both elections were influenced by one another, or if there was any worthwhile connection to be considered at all.
-
 ```{r}
-
 head(joined_vacomparison)
-
-DT(joined_vacomparison)
-
 
 ```
 
@@ -59,51 +49,11 @@ joined_vacomparison %>%
          younkinpct_wins = pct_youngkin > pct_mcauliffe
   )
 
-## This code shows the congruency between the democrats and republicans winning across the election cycles.
-## When Biden had the most votes, Youngkin also had the most votes.
-## This holds true when looking at percentage of votes won by the republicans in the 2020 Presidential election and the gubernatorial race.
-```
-
 ```{r}
 pctyoungkintrump <- joined_vacomparison %>% 
   mutate(pct_youngkin - trump_pct)
 
 pctyoungkintrump
 
-## 3. Include code to a new column to the dataset calculating the difference between the percentage of the vote Youngkin received and what Trump received.
 
-## I used mutate() function to create a new column called mc_overperform.
-## mc_overperform creates a new column that shows the difference in percentages of votes for Youngkin and Trump.
-
-joined_vacomparison <- joined_vacomparison %>% 
-  mutate(mc_overperform = pct_mcauliffe - biden_pct, mc_overperform_worsethan10 = 
-           ifelse(mc_overperform < -10, "YES", "NO"))
-
-joined_vacomparison
-
-## Include code to a new column to the dataset calculating the difference between the percentage of the vote Youngkin received and what Trump received.
-
-joined_vacomparison <- joined_vacomparison %>% 
-  mutate(yk_overperform = pct_youngkin - trump_pct)
-
-
-
-```
-
-\`\`\`{r}
-
-```{r}
-
-## Use this new column to find the Top 5 counties with the highest differences between Younkin/Trump percent, and then create a well-labeled chart to visualize them.
-
-
-
-```
-
-```{r}
-## Create a chart that shows the Top 5 counties based on where Youngkin got the highest percentage of the vote
-```
-
-```{r}
-## Create a table that shows the Top 5 counties based on where McCauliffe got the highest percentage of the vote
 ```

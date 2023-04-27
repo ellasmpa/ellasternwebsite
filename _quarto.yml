@@ -22,6 +22,8 @@ website:
       - newsstory.qmd
       - HWmapping.qmd
       - va_electionproject.qmd
+      - newconceptwalkthrough.qmd
+      - breakingnewsstory.qmd
 
 format:
   html:

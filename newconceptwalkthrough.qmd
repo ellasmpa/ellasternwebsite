@@ -8,3 +8,6 @@ format:
     toc: true
     toc-location: left
 ---
+```{r}
+## A new page that features your own customized walkthrough of a concept in R that we’ve learned, demonstrating your understanding of it and using data of your choice to show it. This page should be treated as if you are doing a tutorial for a beginner learner about how the concept works - that is the intended audience. Therefore you should provide all necessary explanations as you walk through the concept and show example code of your choice so they’ll understand it.
+```

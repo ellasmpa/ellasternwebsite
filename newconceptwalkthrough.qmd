@@ -11,3 +11,58 @@ format:
 ```{r}
 ## A new page that features your own customized walkthrough of a concept in R that we’ve learned, demonstrating your understanding of it and using data of your choice to show it. This page should be treated as if you are doing a tutorial for a beginner learner about how the concept works - that is the intended audience. Therefore you should provide all necessary explanations as you walk through the concept and show example code of your choice so they’ll understand it.
 ```
+
+This walk through will demonstrate how to filter and sort using the dataset mtcars. The first step is to load the packages:
+
+```{r}
+library(tidyverse)
+library(tidyquant)
+library(writexl)
+data("mtcars")
+```
+
+mtcars is a dataset that already exist in R. It contains measurements on 11 cars with 32 different attributes.
+
+Once you decide what data you will be using, you should save it to an object in order to in order to access and manipulate the data. You do that using the arrow below:
+
+```{r}
+carsdata <- mtcars
+```
+
+R will spit out the data in mtcars everytime you type carsdata. Let's try it:
+```{r}
+carsdata
+```
+To see only the first few data points (or cars in the dataset) use the command head()
+
+```{r}
+head(carsdata)
+```
+
+Great! But let's get more specific with what we'd like to see. 
+
+Filtering and sorting is a way to manipulate data in R in order to pull exact information from a data set. 
+
+As an example, let's try to find information only for cars with 6 cylinders. Make sure to use "==" when trying to find the variable that you'd like to single out. A single = will not produce code. 
+
+```{r}
+filter(carsdata, cyl == 6)
+```
+Great job! This code essentially says filter the dataset called carsdata for only cars that have 6 cylinders.
+
+We still haven't changed the original table. In order to do that you'd have to save it as a new object. Since we only told R to filter by cars with 6 cylinders, that's what it did. But it turns out that's still a lot of cars.
+
+Side Note: If you need to know what each variable in mtcars stands for use the Help tool in R. Search "mtcars" then you can find what each variable means. For example, am stands for transmission. It is a binary variable which means that if it 0 the car is automatic and if it's 1 the car is manual. Try using the Help tool in R to find what each variable means.
+
+Now, let's try filtering for multiple things in the dataset. Let's find all cars that have 6 cylinders and are automatic. This will make our dataset even more specific. Make sure to use a comma between the two variables in order to separate them.
+
+```{r}
+filter(carsdata, cyl == "6", am == "0")
+
+```
+
+Amazing! There's only 4 cars with both of these characteristics. This dataset is from the 1970s, today there might be more automatic cars with 6 cylinders.
+
+Now, let's introduce a tool that will make all of this a tad easier, the gorgeous pipe function.
+```{r}
+```

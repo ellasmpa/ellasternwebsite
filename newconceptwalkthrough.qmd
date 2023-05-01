@@ -21,9 +21,9 @@ library(writexl)
 data("mtcars")
 ```
 
-mtcars is a dataset that already exist in R. It contains measurements on 11 cars with 32 different attributes.
+mtcars is a dataset that already exist in R. It contains measurements on 32 cars with 11 different attributes.
 
-Once you decide what data you will be using, you should save it to an object in order to in order to access and manipulate the data. You do that using the arrow below:
+Once you decide what data you will be using, you should save it to an object in order to in order to access and manipulate the data. You do that using the assignment operator below:
 
 ```{r}
 carsdata <- mtcars
@@ -52,7 +52,7 @@ Great job! This code essentially says filter the dataset called carsdata for onl
 
 We still haven't changed the original table. In order to do that you'd have to save it as a new object. Since we only told R to filter by cars with 6 cylinders, that's what it did. But it turns out that's still a lot of cars.
 
-Side Note: If you need to know what each variable in mtcars stands for use the Help tool in R. Search "mtcars" then you can find what each variable means. For example, am stands for transmission. It is a binary variable which means that if it 0 the car is automatic and if it's 1 the car is manual. Try using the Help tool in R to find what each variable means.
+Side Note: If you need to know what each variable in mtcars stands for use the Help tool in R. Search "mtcars" then you can find what each variable means. For example, am stands for transmission. It is a binary, categorical variable which means that if it 0 the car is automatic and if it's 1 the car is manual. Try using the Help tool in R to find what each variable means.
 
 Now, let's try filtering for multiple things in the dataset. Let's find all cars that have 6 cylinders and are automatic. This will make our dataset even more specific. Make sure to use a comma between the two variables in order to separate them.
 
@@ -64,5 +64,51 @@ filter(carsdata, cyl == "6", am == "0")
 Amazing! There's only 4 cars with both of these characteristics. This dataset is from the 1970s, today there might be more automatic cars with 6 cylinders.
 
 Now, let's introduce a tool that will make all of this a tad easier, the gorgeous pipe function.
+
+The "pipe" %>%  operator allows you to chain together commands. It can be more intuitive as you try to think through each step. The command for it is "CMD SHIFT M" on Macs, "CTRL SHIFT M" for PCs.
+
+Let's identify the exact same variables as above (cylinders, and automatic/manual) using the pipe operator.
+
 ```{r}
+carsdata %>% 
+  filter(cyl == "6", am == "0")
 ```
+Great! It's created the same dataset, using a more intuitive line of code.
+
+The pipe operator is really great for when we begin sorting our data. 
+
+Let's start by learning how to arrange the data. Let's arrange the data set by the heaviest cars. This is the variable "wt" and the help section in R allows us to understand that it is measured in 1000 lbs.
+```{r}
+carsdata %>% 
+  arrange(desc(wt))
+```
+Now we know the heaviest car is about 5,000 pounds and the lightest is about 1,000 pounds,
+
+Amazing! So now we can both sort and filter using the pipe chain in one command.
+```{r}
+carsdata %>% 
+  filter(cyl == "6", am == "0") %>% 
+  arrange(desc(wt))
+```
+
+Now we have a dataset for all 6 cylinder automatic cars. Yay! Without the pipes it would have involved much longer, less intuitive lines of code.
+
+Now let's say we only want to see some of the columns. The cars data has information that may not be relevant, for example what the heck is a carburetor? It may not be relevant to have.
+
+In R you can use the `select()` function in order to only take certain columns. Let's take a look...
+
+```{r}
+carsdata  %>% 
+  select(mpg, cyl, disp, hp, wt)
+```
+Nice! So let's put it all together and only find automatic cars with 6 cylinders in the data set, arranged by weight and without concern for some other irrelevant variables (such as number of carburetors).
+
+```{r}
+carsdata %>% 
+  filter(cyl == "6", am == "0") %>% 
+  arrange(desc(wt)) %>% 
+  select(mpg, cyl, disp, hp, wt)
+```
+
+Amazing work! So what you have done here is create a dataset that filters and sorts for specific variables. In addition to this sorting and filtering, we created a dataframe that doesn't include relevant variables (in a hypothetical sense). If this was being used for research, it would be helpful to the audience in order to take only relevant information and apply it for whatever conclusions one was seeking to make sense of. 
+

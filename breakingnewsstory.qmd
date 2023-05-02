@@ -14,7 +14,6 @@ format:
 ```
 
 ```{r}
-## using flights data 
 library(tidyverse)
 library(nycflights13) # <- make sure to install this package 
 library(tidycensus)
@@ -23,13 +22,38 @@ library(writexl)
 library(here)
 options(tigris_class = "sf")
 ```
-```{r}
-flightdata <- nycflights13::flights
-flightdata
 
+```{r}
+flights <- nycflights13::flights
 ```
 ```{r}
+flights_leavingfromEWR <- flights %>% 
+  filter(origin == "EWR") %>% 
+  nrow()
+
+flights_leavingfromEWR
+```
+There were `r flights_leavingfromEWR` departing EWR airport in 2013 in Newark, New Jersey. 
+
+```{r}
+longdelays_EWR <- flights
+flights %>% 
+  filter(origin == "EWR") %>% 
+  filter(dep_delay < 4) %>% 
+  nrow()
+
+120835/73189
+
+longdelays_JFK <- flights %>% 
+  filter(origin == "JFK") %>% 
+  filter(dep_delay < 4) %>% 
+  nrow()
+
+flights %>% 
+  summarize(mean(dep_delay, na.rm = TRUE))
 
 ```
+
+
 
 

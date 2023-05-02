@@ -49,11 +49,16 @@ longdelays_JFK <- flights %>%
   filter(dep_delay < 4) %>% 
   nrow()
 
-flights %>% 
+average_2013_flightdelay <- flights %>% 
   summarize(mean(dep_delay, na.rm = TRUE))
 
 ```
+On average, flights in 2013 were delayed by `r average_2013_flightdelay` minutes.
+```{r}
+average_delays_EWR <- flights %>% 
+  filter(origin == "EWR") %>% 
+  summarize(mean(dep_delay, na.rm = TRUE))
 
-
-
-
+average_delays_EWR
+```
+On average, flights departing Newark were delayed by `r average_delays_EWR` minutes.

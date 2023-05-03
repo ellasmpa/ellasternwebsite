@@ -52,6 +52,8 @@ longdelays_JFK <- flights %>%
 average_2013_flightdelay <- flights %>% 
   summarize(mean(dep_delay, na.rm = TRUE))
 
+average_2013_flightdelay
+
 ```
 On average, flights in 2013 were delayed by `r average_2013_flightdelay` minutes.
 ```{r}
@@ -61,5 +63,16 @@ average_delays_EWR <- flights %>%
 
 average_delays_EWR
 ```
+## BREAKING NEWS STORY ##
+
 On average, flights departing Newark were delayed by `r average_delays_EWR` minutes.
 
+In 2013, air travel faced significant delays, with flights departing from Newark Airport experiencing longer wait times than the average flight. According to recent data, `r flights_leavingfromEWR` flights departed from Newark Airport in that year, with an average delay of `r average_delays_EWR` minutes.
+
+This figure is notably higher than the average delay experienced by all flights in 2013, which was `r average_2013_flightdelay` minutes. The discrepancy between the two figures suggests that Newark Airport faced unique challenges that impacted its ability to operate flights efficiently.
+
+The reasons behind the delays are varied, ranging from adverse weather conditions to mechanical issues and operational challenges. However, the airport and airlines have taken steps to address the problem, including investing in new technologies, streamlining processes, and improving communication between airlines and air traffic control.
+
+Despite the challenges faced, air travel in 2013 saw continued growth, with more people taking to the skies than ever before. This growth is expected to continue, with more people seeking the convenience and speed of air travel in the years to come.
+
+As air travel continues to evolve, it is essential for airports and airlines to work together to minimize delays and ensure that passengers can travel safely and efficiently. With ongoing improvements in technology and operations, the future of air travel looks bright.

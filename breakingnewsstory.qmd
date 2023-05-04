@@ -64,7 +64,8 @@ average_delays_EWR <- flights %>%
 
 average_delays_EWR
 ```
-## BREAKING NEWS STORY ##
+
+BREAKING NEWS STORY
 
 On average, flights departing Newark were delayed by `r average_delays_EWR` minutes.
 

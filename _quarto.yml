@@ -15,7 +15,6 @@ website:
         text: Home
       - href: SternElla.pdf
         text: Resume
-      - about.qmd
       - portfolio.qmd
       - walkthrough.qmd
       - textofpaper.qmd
